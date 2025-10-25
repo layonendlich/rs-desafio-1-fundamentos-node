@@ -1,0 +1,25 @@
+{
+  "name": "rs-desafio-1-fundamentos-node",
+  "version": "0.0.1",
+  "description": "API Node com um CRUD de tarefas",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/layonendlich/rs-desafio-1-fundamentos-node.git"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Layon Endlich Rodrigues",
+    "email": "layonendlich@hotmail.com",
+    "url": "https://layon.com.br"
+  },
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/layonendlich/rs-desafio-1-fundamentos-node/issues"
+  },
+  "homepage": "https://github.com/layonendlich/rs-desafio-1-fundamentos-node#readme"
+}
