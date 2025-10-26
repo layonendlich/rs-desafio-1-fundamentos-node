@@ -1,6 +1,7 @@
 import http from 'node:http'
 
 import { routes } from './routes.js'
+import { getQueryParams } from './utils/getQueryParams.js'
 import { getRequestBody } from './middlewares/getRequestBody.js'
 
 const server = http.createServer( async (request, response) =>  {
@@ -18,9 +19,9 @@ const server = http.createServer( async (request, response) =>  {
     if (route) {
         const routeParams = url.match(route.path)
         const { query , ...params } = routeParams.groups
-        console.log(routeParams.groups)
-        console.log('query', query)
-        console.log('params', params)
+        request.params = params
+        request.query = query ? getQueryParams(query) : {}
+        console.log('request.query', request.query)
         const res = await route.handler(app)
 
         console.log(new Date().toISOString(), res.status || 200, method, url)
