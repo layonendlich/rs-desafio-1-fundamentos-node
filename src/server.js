@@ -1,8 +1,12 @@
 import http from 'node:http'
 
 import { routes } from './routes.js'
+import { getRequestBody } from './middlewares/getRequestBody.js'
 
 const server = http.createServer( async (request, response) =>  {
+    await getRequestBody(request, response)
+    console.log(request.body)
+
     const app = { request, response }
     const { method, url } = request
     
