@@ -42,11 +42,18 @@ export class Database {
     }
 
     insert (collection, data) {
+        if (!this.#database[collection]) {
+            this.#database[collection] = []
+        }
         const record = { id: randomUUID(), ... data}
         record.created_at = new Date().toISOString()
         record.updated_at = new Date().toISOString()
-        this.#database[collection] = [record]
+        this.#database[collection].push(record)
         this.#persist()
         return record
+    }
+
+    select (collection, data) {
+        return this.#database[collection]
     }
 }
