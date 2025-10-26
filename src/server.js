@@ -10,7 +10,7 @@ const database = new Database
 const server = http.createServer( async (request, response) =>  {
     await getRequestBody(request, response)
 
-    const app = { request, response }
+    const app = { database, request, response }
     const method = request.method
     const url = request.url.toLowerCase()
     

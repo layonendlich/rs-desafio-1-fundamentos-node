@@ -1,4 +1,5 @@
 import { constants } from 'node:buffer'
+import { randomUUID } from 'node:crypto'
 import fs from 'node:fs/promises'
 
 // const databasePath = new URL('../storage/database.json', import.meta.url)
@@ -38,5 +39,14 @@ export class Database {
 
         const filePath = new URL('../' + databasePath, import.meta.url)
         fs.writeFile(filePath, JSON.stringify(this.#database))
+    }
+
+    insert (collection, data) {
+        const record = { id: randomUUID(), ... data}
+        record.created_at = new Date().toISOString()
+        record.updated_at = new Date().toISOString()
+        this.#database[collection] = [record]
+        this.#persist()
+        return record
     }
 }
