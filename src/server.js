@@ -5,17 +5,17 @@ import { getRequestBody } from './middlewares/getRequestBody.js'
 
 const server = http.createServer( async (request, response) =>  {
     await getRequestBody(request, response)
-    console.log(request.body)
 
     const app = { request, response }
     const { method, url } = request
     
     const route = routes.find( el =>
-        el.path.toLowerCase() === url.toLowerCase() &&
+        el.path.test(url.toLowerCase()) &&
         el.method.toUpperCase() === method.toUpperCase()
     )
 
     if (route) {
+        console.log('route', route.path)
         const res = await route.handler(app)
 
         console.log(new Date().toISOString(), res.status || 200, method, url)
