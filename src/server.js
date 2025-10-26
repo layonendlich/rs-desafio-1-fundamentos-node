@@ -3,6 +3,9 @@ import http from 'node:http'
 import { routes } from './routes.js'
 import { getQueryParams } from './utils/getQueryParams.js'
 import { getRequestBody } from './middlewares/getRequestBody.js'
+import { Database } from './Database.js'
+
+const database = new Database
 
 const server = http.createServer( async (request, response) =>  {
     await getRequestBody(request, response)
@@ -21,7 +24,7 @@ const server = http.createServer( async (request, response) =>  {
         const { query , ...params } = routeParams.groups
         request.params = params
         request.query = query ? getQueryParams(query) : {}
-        console.log('request.query', request.query)
+
         const res = await route.handler(app)
 
         console.log(new Date().toISOString(), res.status || 200, method, url)
