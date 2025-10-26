@@ -7,7 +7,8 @@ const server = http.createServer( async (request, response) =>  {
     await getRequestBody(request, response)
 
     const app = { request, response }
-    const { method, url } = request
+    const method = request.method
+    const url = request.url.toLowerCase()
     
     const route = routes.find( el =>
         el.path.test(url.toLowerCase()) &&
@@ -15,7 +16,11 @@ const server = http.createServer( async (request, response) =>  {
     )
 
     if (route) {
-        console.log('route', route.path)
+        const routeParams = url.match(route.path)
+        const { query , ...params } = routeParams.groups
+        console.log(routeParams.groups)
+        console.log('query', query)
+        console.log('params', params)
         const res = await route.handler(app)
 
         console.log(new Date().toISOString(), res.status || 200, method, url)
