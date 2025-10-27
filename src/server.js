@@ -26,7 +26,17 @@ const server = http.createServer( async (request, response) =>  {
         request.params = params
         request.query = query ? getQueryParams(query) : {}
 
-        const res = await route.handler(app)
+        let res
+        try {
+            res = await route.handler(app)
+        } catch (err) {
+            console.log('Oops...')
+            console.log(err)
+            res = {
+                status: 500,
+                data: {message: 'Oops... try again later.'}
+            }
+        }
 
         console.log(new Date().toISOString(), res.status || 200, method, url)
 

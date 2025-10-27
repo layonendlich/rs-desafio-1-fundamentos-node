@@ -60,7 +60,9 @@ export class Database {
         if (search) {
             data = data.filter(row => {
                 return Object.entries(search).some(([key, value]) => {
-                    return row[key].toLowerCase().includes(value.toLowerCase())
+                    if (row[key]) {
+                        return row[key].toLowerCase().includes(value.toLowerCase())
+                    }
                 })
             })
         }
