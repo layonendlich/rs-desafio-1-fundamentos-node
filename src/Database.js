@@ -66,4 +66,20 @@ export class Database {
         }
         return data
     }
+
+    update (collection, id, data) {
+        const index = this.#database[collection].findIndex(el =>
+            el.id == id
+        )
+
+        if (index === -1) return null
+
+        Object.keys(data).forEach(key => {
+            this.#database[collection][index][key] = data[key]
+        })
+        this.#database[collection][index].updated_at = new Date().toISOString()
+
+        this.#persist()
+        return this.#database[collection][index]
+    }
 }

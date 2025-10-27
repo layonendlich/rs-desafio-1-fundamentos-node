@@ -55,6 +55,50 @@ const routes = [
             return { data: res }
         }
     },
+    {
+        path: buildRoutePath('/task/:id'),
+        method: 'PUT',
+        handler: async (app) => {
+            const { id } = app.request.params
+            const data = {}
+            for (const key of [ 'title', 'description', 'completed_at' ]) {
+                if (app.request.body[key]) {
+                    data[key] =  app.request.body[key]
+                }
+            }
+
+            if (data.title && data.title === '') {
+                return {
+                    status: 400,
+                    data: { message: '"title" is required.'}
+                }
+            }
+
+            const res = app.database.update('task', id, data)
+
+            if (res) {
+                return { data: res }
+            }
+
+            return { status: 404, data: null }
+        }
+    },
+    {
+        path: buildRoutePath('/task/:id'),
+        method: 'PATCH',
+        handler: async (app) => {
+            const { id } = app.request.params
+            const data = { completed_at: new Date().toISOString() }
+
+            const res = app.database.update('task', id, data)
+
+            if (res) {
+                return { data: res }
+            }
+
+            return { status: 404, data: null }
+        }
+    },
 ]
 
 export {routes}
