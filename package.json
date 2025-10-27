@@ -1,6 +1,6 @@
 {
   "name": "rs-desafio-1-fundamentos-node",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "API Node com um CRUD de tarefas",
   "main": "index.js",
   "type": "module",
