@@ -6,6 +6,11 @@
 - Para iniciá-lo, execute `npm i` ou o comando equivalente do seu gerenciador de pacotes favorito.
 - Para executá-lo, execute o comando `npm start`.
 
+**_Releases_**
+
+- **1.0.0** Primeira versão da API, com CRUD completo na rota `/task`.
+- **Latest** Dockerfile
+
 ## Conheça o projeto
 
 **rs-desafio-1-fundamentos-node**
