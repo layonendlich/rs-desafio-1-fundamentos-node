@@ -1,8 +1,15 @@
 # CRUD de Tarefas - Fundamentos do Node.js
 
-**rs-desafio-1-fundamentos-node**
+**Informações para execução**
+
+- O projeto foi desenvolvido e testado em Node v.22.
+- Para iniciá-lo, execute `npm i` ou o comendo equivalente no seu gerenciador de pacotes favorito.
+- Para executá-lo, execute o comando `npm start`.
 
 ## Conheça o projeto
+
+**rs-desafio-1-fundamentos-node**
+
 Nesse desafio você irá desenvolver uma API em Node.js para realizar o gerenciamento completo de tarefas (CRUD). As funcionalidades essenciais incluem a criação, listagem com filtros por título e descrição, atualização, remoção e a marcação de tarefas como concluídas. O principal diferencial do projeto é a implementação de uma rotina de importação de tarefas em massa a partir de um arquivo CSV, utilizando a biblioteca ⁠`csv-parse`.
 
 ## Instruções
