@@ -45,15 +45,25 @@ export class Database {
         if (!this.#database[collection]) {
             this.#database[collection] = []
         }
+
         const record = { id: randomUUID(), ... data}
         record.created_at = new Date().toISOString()
         record.updated_at = new Date().toISOString()
+
         this.#database[collection].push(record)
         this.#persist()
         return record
     }
 
-    select (collection, data) {
-        return this.#database[collection]
+    select (collection, search) {
+        let data = this.#database[collection] || []
+        if (search) {
+            data = data.filter(row => {
+                return Object.entries(search).some(([key, value]) => {
+                    return row[key].toLowerCase().includes(value.toLowerCase())
+                })
+            })
+        }
+        return data
     }
 }

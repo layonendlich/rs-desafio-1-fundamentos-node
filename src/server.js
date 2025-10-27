@@ -8,6 +8,7 @@ import { Database } from './Database.js'
 const database = new Database
 
 const server = http.createServer( async (request, response) =>  {
+    response.setHeader('Content-Type', 'Application/json')
     await getRequestBody(request, response)
 
     const app = { database, request, response }
