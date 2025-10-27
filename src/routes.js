@@ -99,6 +99,21 @@ const routes = [
             return { status: 404, data: null }
         }
     },
+    {
+        path: buildRoutePath('/task/:id'),
+        method: 'DELETE',
+        handler: async (app) => {
+            const { id } = app.request.params
+
+            const res = app.database.delete('task', id)
+
+            if (res) {
+                return { data: res }
+            }
+
+            return { status: 404, data: null }
+        }
+    },
 ]
 
 export {routes}

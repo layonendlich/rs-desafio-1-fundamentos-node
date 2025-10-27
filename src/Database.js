@@ -82,4 +82,17 @@ export class Database {
         this.#persist()
         return this.#database[collection][index]
     }
+
+    delete (collection, id) {
+        const index = this.#database[collection].findIndex(el =>
+            el.id == id
+        )
+
+        if (index === -1) return null
+
+        this.#database[collection].splice(index, 1)
+
+        this.#persist()
+        return true
+    }
 }
