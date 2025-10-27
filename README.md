@@ -3,7 +3,7 @@
 **Informações para execução**
 
 - O projeto foi desenvolvido e testado em Node v.22.
-- Para iniciá-lo, execute `npm i` ou o comendo equivalente no seu gerenciador de pacotes favorito.
+- Para iniciá-lo, execute `npm i` ou o comando equivalente do seu gerenciador de pacotes favorito.
 - Para executá-lo, execute o comando `npm start`.
 
 ## Conheça o projeto
