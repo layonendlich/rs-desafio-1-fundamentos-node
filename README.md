@@ -9,7 +9,9 @@
 **_Releases_**
 
 - **1.0.0** Primeira versão da API, com CRUD completo na rota `/task`.
-- **Latest** Dockerfile
+- **1.1.0** Dockerfile.
+- **~~1.1.1 RC~~** Ajuste no tratamento do payload das requisições.
+- **RC** Processo auxiliar para leitura de arquivos CSV.
 
 ## Conheça o projeto
 
