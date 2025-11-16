@@ -79,7 +79,7 @@ export class Task {
         return { status: 404, data: null }
     }
 
-    async detele (app) {
+    async delete (app) {
         const { id } = app.request.params
         const res = app.database.delete('task', id)
 
