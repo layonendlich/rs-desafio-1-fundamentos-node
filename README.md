@@ -1,17 +1,28 @@
 # CRUD de Tarefas - Fundamentos do Node.js
 
+<details>
+
+<summary>Releases</summary>
+
+- **1.0.0** Primeira versão da API, com CRUD completo na rota `/task`.
+- **1.1.0** Dockerfile.
+- **~~1.1.1 RC~~** Ajuste no tratamento do payload das requisições.
+- **Latest** Processo auxiliar para leitura de arquivos CSV.
+
+</details>
+
 **Informações para execução**
 
 - O projeto foi desenvolvido e testado em Node v.22.
 - Para iniciá-lo, execute `npm i` ou o comando equivalente do seu gerenciador de pacotes favorito.
 - Para executá-lo, execute o comando `npm start`.
+- Para realizar a importação de várias tarefas contidas num arquivo CSV:
+    - Nomeie o arquivo como **planilha.csv** e o coloque na pasta **storage** do projeto;
+        - A pasta **storage** é criada no diretório raiz do projeto, na primeira vez em que a API é executada.
+    - Certifique-se de que a API já esteja em execução (`npm start`); e
+    - Execute o comando `npm run import-csv`.
 
-**_Releases_**
-
-- **1.0.0** Primeira versão da API, com CRUD completo na rota `/task`.
-- **1.1.0** Dockerfile.
-- **~~1.1.1 RC~~** Ajuste no tratamento do payload das requisições.
-- **RC** Processo auxiliar para leitura de arquivos CSV.
+**Quando executado num _container_, um volume deve ser vinculado à a pasta `storage`, no diretório raiz do projeto, para que os dados sejam persistidos.**
 
 ## Conheça o projeto
 

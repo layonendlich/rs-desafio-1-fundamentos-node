@@ -1,5 +1,5 @@
-import { Task } from "./Task.js"
 import { buildRoutePath } from "./utils/buildRoutePath.js"
+import { Task } from "./Task.js"
 
 const task = new Task
 
@@ -39,7 +39,7 @@ const routes = [
     {
         path: buildRoutePath('/task/:id'),
         method: 'DELETE',
-        handler: async (app) => task.delete(app)
+        handler: async (app) => await task.delete(app)
     },
 ]
 

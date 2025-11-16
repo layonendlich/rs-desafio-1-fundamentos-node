@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node src/server.js",
+    "import-csv": "node src/import-csv.js",
     "dev": "node --watch src/server.js"
   },
   "repository": {
