@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "start": "node src/server.js",
+    "import-csv": "node src/import-csv.js",
     "dev": "node --watch src/server.js"
   },
   "repository": {
@@ -22,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/layonendlich/rs-desafio-1-fundamentos-node/issues"
   },
-  "homepage": "https://github.com/layonendlich/rs-desafio-1-fundamentos-node#readme"
+  "homepage": "https://github.com/layonendlich/rs-desafio-1-fundamentos-node#readme",
+  "dependencies": {
+    "csv-parse": "^6.1.0"
+  }
 }
