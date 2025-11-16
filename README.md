@@ -11,18 +11,19 @@
 
 </details>
 
-**Informações para execução**
+## Informações para execução
 
 - O projeto foi desenvolvido e testado em Node v.22.
-- Para iniciá-lo, execute `npm i` ou o comando equivalente do seu gerenciador de pacotes favorito.
-- Para executá-lo, execute o comando `npm start`.
+- Para iniciá-lo,
+    - execute `npm i` ou o comando equivalente do seu gerenciador de pacotes favorito.
+    - execute o comando `npm start`.
 - Para realizar a importação de várias tarefas contidas num arquivo CSV:
     - Nomeie o arquivo como **planilha.csv** e o coloque na pasta **storage** do projeto;
         - A pasta **storage** é criada no diretório raiz do projeto, na primeira vez em que a API é executada.
     - Certifique-se de que a API já esteja em execução (`npm start`); e
     - Execute o comando `npm run import-csv`.
 
-**Quando executado num _container_, um volume deve ser vinculado à a pasta `storage`, no diretório raiz do projeto, para que os dados sejam persistidos.**
+**Quando executado num _container_, um volume deve ser vinculado à pasta `storage`, no diretório raiz do projeto, para que os dados sejam persistidos.**
 
 ## Conheça o projeto
 
